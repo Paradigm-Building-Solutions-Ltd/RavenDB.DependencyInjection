@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Raven.Client.Documents;
 using System;
 using System.Security.Cryptography.X509Certificates;
@@ -28,12 +27,6 @@ namespace Raven.DependencyInjection
         /// The default value is set to context of the execution.
         /// </summary>
         public IConfiguration? GetConfiguration { get; set; }
-
-        /// <summary>
-        /// The default value is set to <see cref="IHostingEnvironment"/>.
-        /// This will change with AspNetCore 3.0 version.
-        /// </summary>
-        public IHostingEnvironment? GetHostingEnvironment { get; set; }
 
         /// <summary>
         /// The certificate file for the <see cref="IDocumentStore"/>.

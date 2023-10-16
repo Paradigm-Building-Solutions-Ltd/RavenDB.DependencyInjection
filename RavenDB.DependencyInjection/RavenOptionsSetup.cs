@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Raven.Client.Documents;
 using System;
@@ -13,20 +12,16 @@ namespace Raven.DependencyInjection
     /// </summary>
     public class RavenOptionsSetup : IConfigureOptions<RavenOptions>, IPostConfigureOptions<RavenOptions>
     {
-        private readonly IHostingEnvironment _hosting;
         private readonly IConfiguration _configuration;
         private RavenOptions? _options;
 
         /// <summary>
         /// The constructor for <see cref="RavenOptionsSetup"/>.
         /// </summary>
-        /// <param name="hosting"></param>
         /// <param name="configuration"></param>
         public RavenOptionsSetup(
-            IHostingEnvironment hosting,
             IConfiguration configuration)
         {
-            _hosting = hosting;
             _configuration = configuration;
         }
 
@@ -42,11 +37,6 @@ namespace Raven.DependencyInjection
                 _configuration.Bind(options.SectionName, settings);
 
                 options.Settings = settings;
-            }
-
-            if (options.GetHostingEnvironment == null)
-            {
-                options.GetHostingEnvironment = _hosting;
             }
 
             if (options.GetConfiguration == null)
@@ -107,14 +97,13 @@ namespace Raven.DependencyInjection
 
         private X509Certificate2? GetCertificateFromFileSystem()
         {
-            var certRelativePath = _options?.Settings?.CertFilePath;
+            var certFilePath = _options?.Settings?.CertFilePath;
 
-            if (!string.IsNullOrEmpty(certRelativePath))
+            if (!string.IsNullOrEmpty(certFilePath))
             {
-                var certFilePath = Path.Combine(_options?.GetHostingEnvironment?.ContentRootPath, certRelativePath);
                 if (!File.Exists(certFilePath))
                 {
-                    throw new InvalidOperationException($"The Raven certificate file, {certRelativePath} is missing. Expected it at {certFilePath}.");
+                    throw new InvalidOperationException($"The Raven certificate file, {certFilePath} is missing.");
                 }
 
                 return new X509Certificate2(certFilePath, _options?.Settings?.CertPassword);
