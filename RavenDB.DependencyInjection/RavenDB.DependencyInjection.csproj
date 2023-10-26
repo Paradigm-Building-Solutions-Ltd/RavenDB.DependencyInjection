@@ -4,24 +4,24 @@
     <TargetFrameworks>netstandard2.1</TargetFrameworks>
     <RootNamespace>RavenDB.DependencyInjection</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Judah Gabriel Himango</Authors>
-    <Company>BitShuva</Company>
+    <Authors>Judah Gabriel Himango, Tylor Pater</Authors>
+    <Company>BitShuva, Paradigm Building Solutions Ltd</Company>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIcon>nuget-icon.png</PackageIcon>
 
     <Title>RavenDB Dependency Injection</Title>
     <Description>RavenDB.DependencyInjection makes it easy to put your Raven doc store and document session into AspNetCore's dependency injection container.</Description>
-    <PackageReleaseNotes>Fixed null reference bug where AfterInitializeDocStore is not set. Added nullable annotations.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixed reference to Microsoft.Extensions.Hosting.</PackageReleaseNotes>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageId>RavenDB.DependencyInjection</PackageId>
-    <Product>RavenDB.DependencyInjection</Product>
+    <PackageId>Paradigm.RavenDB.DependencyInjection</PackageId>
+    <Product>Paradigm.RavenDB.DependencyInjection</Product>
     <RepositoryType>git</RepositoryType>
     <AssemblyName>RavenDB.DependencyInjection</AssemblyName>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/JudahGabriel/RavenDB.DependencyInjection</RepositoryUrl>
     <PackageTags>ravendb dependency-injection di aspnetcore nosql</PackageTags>
-    <Version>4.0.2</Version>
+    <Version>4.0.3</Version>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Nullable>enable</Nullable>
