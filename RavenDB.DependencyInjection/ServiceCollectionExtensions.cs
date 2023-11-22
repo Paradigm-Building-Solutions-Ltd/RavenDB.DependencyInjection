@@ -62,7 +62,7 @@ namespace Raven.DependencyInjection
         /// <returns>The same service collection so that multiple calls can be chained.</returns>
         public static IServiceCollection AddRavenDbAsyncSession(this IServiceCollection services)
         {
-            return services.AddScoped(sp => sp.GetRequiredService<IDocumentStore>().OpenAsyncSession());
+            return services.AddTransient(sp => sp.GetRequiredService<IDocumentStore>().OpenAsyncSession());
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Raven.DependencyInjection
             this IServiceCollection services,
             IDocumentStore docStore)
         {
-            return services.AddScoped(_ => docStore.OpenAsyncSession());
+            return services.AddTransient(_ => docStore.OpenAsyncSession());
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Raven.DependencyInjection
         /// <returns>The same service collection so that multiple calls can be chained.</returns>
         public static IServiceCollection AddRavenDbSession(this IServiceCollection services)
         {
-            return services.AddScoped(sp => sp.GetRequiredService<IDocumentStore>().OpenSession());
+            return services.AddTransient(sp => sp.GetRequiredService<IDocumentStore>().OpenSession());
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Raven.DependencyInjection
             this IServiceCollection services,
             IDocumentStore docStore)
         {
-            return services.AddScoped(_ => docStore.OpenSession());
+            return services.AddTransient(_ => docStore.OpenSession());
         }
     }
 }
