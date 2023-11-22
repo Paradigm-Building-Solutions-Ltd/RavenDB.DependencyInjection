@@ -21,7 +21,7 @@
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/JudahGabriel/RavenDB.DependencyInjection</RepositoryUrl>
     <PackageTags>ravendb dependency-injection di aspnetcore nosql</PackageTags>
-    <Version>4.0.3</Version>
+    <Version>4.0.4</Version>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Nullable>enable</Nullable>
