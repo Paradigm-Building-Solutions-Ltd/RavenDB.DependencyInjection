@@ -21,7 +21,7 @@ namespace Raven.DependencyInjection
         /// The file path to the PFX certificate to use to connect to Raven. This should be an absolute path. If null or empty, no certificate will be used.
         /// </summary>
         public string? CertFilePath { get; set; }
-        
+
         /// <summary>
         /// The password to use for the certificate.
         /// </summary>
