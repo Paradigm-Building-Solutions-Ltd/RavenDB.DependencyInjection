@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Raven.DependencyInjection
+﻿namespace Raven.DependencyInjection
 {
     /// <summary>
     /// Contains settings for RavenDB, such as the URL to the database.
